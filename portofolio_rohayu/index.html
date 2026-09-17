@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portofolio Rohayu - Desainer Buku Sederhana di Indonesia. Layanan desain sampul buku, tata letak naskah (layouting), dan tipografi siap cetak yang rapi dan elegan." />
+  <meta name="author" content="Rohayu" />
+  <title>Rohayu — Portofolio Desain Buku Sederhana</title>
+
+  <!-- Lembar Gaya CSS Eksternal (Dipecah) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Kanvas Efek Partikel Kelopak Bunga Melayang -->
+  <canvas id="flowerPetalsCanvas" class="flower-petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGASI
+       ========================================================================== -->
+  <header class="site-header" id="headerUtama">
+    <div class="container header-inner">
+      <a href="#beranda" class="brand-group" aria-label="Rohayu Desain Buku">
+        <span class="brand-name">Rohayu<span class="brand-dot"></span></span>
+        <span class="brand-tagline">Desain Buku</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+          <li><a href="#tentang" class="nav-link">Tentang</a></li>
+          <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
+          <li><a href="#proses" class="nav-link">Alur Kerja</a></li>
+          <li><a href="#kontak" class="nav-link">Kontak</a></li>
+          <li>
+            <button class="btn-flower-toggle" id="flowerToggleBtn" onclick="toggleFlowerAnimation()"
+              aria-label="Nyalakan atau Matikan Efek Kelopak Bunga" title="Klik untuk menjeda efek bunga">
+              🌸 <span class="btn-flower-label">Bunga: Aktif</span>
+            </button>
+          </li>
+          <li>
+            <button class="btn-pill btn-pill-outline" id="themeToggleBtn" onclick="toggleNavyTheme()"
+              style="padding: 6px 14px; font-size: 13.5px;" aria-label="Ganti Varian Tema Navy">
+              ⚓ Mode Navy: Terang
+            </button>
+          </li>
+          <li>
+            <a href="#kontak" class="btn-pill btn-pill-primary" style="padding: 6px 18px; font-size: 14px;">
+              Mulai Konsultasi
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <main>
+    <section class="hero-section" id="beranda" style="position: relative;">
+      <!-- Ornamen Bunga Berputar Lembut di Latar Belakang -->
+      <svg class="hero-flower-bloom-bg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="14" fill="var(--flower-petal)" opacity="0.30" />
+        <path d="M50 8 C43 22, 43 38, 50 42 C57 38, 57 22, 50 8 Z" fill="var(--flower-petal)" opacity="0.45" />
+        <path d="M50 92 C43 78, 43 62, 50 58 C57 62, 57 78, 50 92 Z" fill="var(--flower-petal)" opacity="0.45" />
+        <path d="M8 50 C22 43, 38 43, 42 50 C38 57, 22 57, 8 50 Z" fill="var(--flower-petal)" opacity="0.45" />
+        <path d="M92 50 C78 43, 62 43, 58 50 C62 57, 78 57, 92 50 Z" fill="var(--flower-petal)" opacity="0.45" />
+        <path d="M20 20 C32 28, 40 39, 44 44 C39 40, 28 32, 20 20 Z" fill="var(--flower-petal)" opacity="0.35" />
+        <path d="M80 80 C68 72, 60 61, 56 56 C61 60, 72 68, 80 80 Z" fill="var(--flower-petal)" opacity="0.35" />
+        <path d="M80 20 C72 32, 61 40, 56 44 C60 39, 68 28, 80 20 Z" fill="var(--flower-petal)" opacity="0.35" />
+        <path d="M20 80 C32 72, 40 61, 44 56 C39 60, 28 72, 20 80 Z" fill="var(--flower-petal)" opacity="0.35" />
+      </svg>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="pill-tag floral">
+              <span class="flower-float-anim">🌸</span> Layanan Desain Buku Bahasa Indonesia
+            </span>
+          </div>
+          <h1 class="hero-title">
+            Mewujudkan Karya Anda Menjadi <span class="highlight">Buku yang Nyaman Dibaca</span> dan Sedap Dipandang.
+          </h1>
+          <p class="hero-desc">
+            Halo! Saya <strong>Rohayu</strong>, desainer buku yang mengkhususkan diri pada tata letak naskah rapi,
+            pemilihan tipografi ramah pembaca, dan desain sampul sederhana yang menyentuh hati. Siap menemani perjalanan
+            naskah Anda hingga siap dicetak.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#portofolio" class="btn-pill btn-pill-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              Jelajahi Portofolio
+            </a>
+            <a href="#kontak" class="btn-pill">
+              Diskusikan Naskah Anda
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">40+</span>
+              <span class="metric-label">Judul Buku Selesai</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Standar Cetak Percetakan</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">Ramah</span>
+              <span class="metric-label">Revisi & Komunikasi Terbuka</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu Visual Interaktif -->
+        <div class="hero-visual-card">
+          <div class="hero-floating-tag">
+            <span class="dot"></span>
+            Siap Terima Naskah Baru
+          </div>
+
+          <!-- Mockup Buku Contoh Hero -->
+          <div class="book-mockup theme-puisi" style="width: 195px; height: 270px; margin: var(--space-20) 0;">
+            <div class="book-cover-top">
+              <span class="book-badge" style="color: #dce7f5; border-color: rgba(220, 231, 245, 0.4);">Pilihan
+                Desain</span>
+              <div class="book-title-mockup" style="font-size: 19px;">Kesederhanaan Kata</div>
+              <div class="book-subtitle-mockup">Harmoni Cerita & Estetika</div>
+            </div>
+
+            <!-- Visual Seni Garis Minimalis -->
+            <svg class="book-artwork-svg" width="100" height="90" viewBox="0 0 100 90" fill="none">
+              <path d="M50 15 C 35 30, 25 50, 50 75 C 75 50, 65 30, 50 15 Z" stroke="#38bdf8" stroke-width="1.8"
+                fill="rgba(56, 189, 248, 0.12)" />
+              <circle cx="50" cy="45" r="8" stroke="#ff5a59" stroke-width="1.5" fill="none" />
+              <line x1="50" y1="10" x2="50" y2="80" stroke="#dce7f5" stroke-width="0.8" stroke-dasharray="2 2" />
+            </svg>
+
+            <div class="book-cover-bottom">
+              <span>ROHAYU STUDIO</span>
+            </div>
+          </div>
+
+          <p style="font-size: 13.5px; color: var(--color-text-muted); margin-bottom: 0;">
+            Kombinasi desain sampul minimalis & tata letak interior yang bersahabat bagi pembaca Indonesia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION TENTANG & NILAI DESAIN
+         ========================================================================== -->
+    <section class="section-about" id="tentang">
+      <div class="container">
+        <div class="about-card">
+          <div class="section-header-center">
+            <span class="pill-tag" style="margin-bottom: var(--space-12);">Filosofi & Layanan</span>
+            <h2>Sentuhan Sederhana yang Menghargai Pembaca</h2>
+            <p>
+              Desain buku yang baik bukan tentang dekorasi yang berlebihan, melainkan bagaimana naskah dapat mengalir
+              dengan nyaman ke dalam ingatan pembaca.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-box">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3>Sampul Bersih & Menarik</h3>
+              <p>
+                Konsep visual yang fokus pada esensi cerita. Setiap warna, ilustrasi garis, dan judul dirancang agar
+                mudah dikenali di toko buku maupun etalase digital.
+              </p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="21" y1="10" x2="3" y2="10"></line>
+                  <line x1="21" y1="6" x2="3" y2="6"></line>
+                  <line x1="21" y1="14" x2="3" y2="14"></line>
+                  <line x1="21" y1="18" x2="3" y2="18"></line>
+                </svg>
+              </div>
+              <h3>Tata Letak (Layout) Rapih</h3>
+              <p>
+                Pengaturan spasi baris, margin proporsional untuk penjilidan, dan hierarki bab yang membuat mata pembaca
+                tidak cepat lelah saat membaca berjam-jam.
+              </p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <h3>Berkas Siap Cetak (PDF/X)</h3>
+              <p>
+                Hasil akhir dilengkapi garis potong (bleed), profil warna CMYK presisi, dan panduan spesifikasi kertas
+                yang langsung bisa dikirim ke percetakan rekanan Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALERI PORTOFOLIO (3 KOLOM DESKTOP, 1 KOLOM MOBILE)
+         ========================================================================== -->
+    <section class="section-portfolio" id="portofolio">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="pill-tag" style="margin-bottom: var(--space-12);">Karya Pilihan</span>
+          <h2>Sampel Desain Buku Bahasa Indonesia</h2>
+          <p>
+            Tiga contoh karya yang merepresentasikan pendekatan desain buku sederhana, mulai dari puisi reflektif, novel
+            remaja, hingga buku panduan praktis.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <!-- KARYA 1: Sampul Buku Antologi Puisi -->
+          <article class="portfolio-card">
+            <div class="book-visual-frame">
+              <div class="book-mockup theme-puisi">
+                <div class="book-cover-top">
+                  <span class="book-badge">Antologi Puisi</span>
+                  <div class="book-title-mockup">Jejak Kata di Balik Senja</div>
+                  <div class="book-subtitle-mockup">Kumpulan Renungan & Sunyi</div>
+                </div>
+
+                <!-- Ilustrasi Vektor Buku Puisi -->
+                <svg class="book-artwork-svg" width="90" height="70" viewBox="0 0 90 70" fill="none">
+                  <circle cx="45" cy="35" r="24" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 3"
+                    opacity="0.6" />
+                  <path d="M45 15 Q 52 35 45 55 Q 38 35 45 15 Z" fill="#9ac7ff" opacity="0.4" />
+                  <circle cx="45" cy="35" r="4" fill="#ff5a59" />
+                </svg>
+
+                <div class="book-cover-bottom">
+                  <span>KARYA ROHAYU</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-content">
+              <div class="portfolio-category-pill">
+                <span class="pill-tag">Karya 01</span>
+              </div>
+              <h3 class="portfolio-title">Sampul Buku Antologi Puisi</h3>
+              <p class="portfolio-desc">
+                Desain sampul dengan palet malam yang tenang dan ilustrasi garis organik. Memberikan kesan misterius dan
+                teduh yang selaras dengan tema puisi kontemplatif.
+              </p>
+              <ul class="spec-list">
+                <li>Format: 13 x 19 cm (Standar Sastra)</li>
+                <li>Pilihan Kertas: Bookpaper 72 gsm</li>
+                <li>Finishing: Doff / Matte Lamination</li>
+              </ul>
+              <button class="btn-pill" onclick="openDetailModal('puisi')">
+                Lihat Rincian Konsep
+              </button>
+            </div>
+          </article>
+
+          <!-- KARYA 2: Tata Letak & Sampul Novel Remaja -->
+          <article class="portfolio-card">
+            <div class="book-visual-frame">
+              <div class="book-mockup theme-novel">
+                <div class="book-cover-top">
+                  <span class="book-badge">Novel Remaja</span>
+                  <div class="book-title-mockup">Langkah Kecil, Cita-Cita Besar</div>
+                  <div class="book-subtitle-mockup">Kisah Persahabatan di Kota Hujan</div>
+                </div>
+
+                <!-- Ilustrasi Vektor Novel Remaja -->
+                <svg class="book-artwork-svg" width="90" height="70" viewBox="0 0 90 70" fill="none">
+                  <path d="M25 50 C 35 25, 55 25, 65 50" stroke="#ff5a59" stroke-width="2.5" stroke-linecap="round" />
+                  <circle cx="35" cy="32" r="5" fill="#4fa0ff" />
+                  <circle cx="55" cy="32" r="5" fill="#ff5a59" />
+                  <path d="M30 55 L 60 55" stroke="#1f1f1f" stroke-width="1.2" />
+                </svg>
+
+                <div class="book-cover-bottom">
+                  <span>DESAIN OLEH ROHAYU</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-content">
+              <div class="portfolio-category-pill">
+                <span class="pill-tag accent-coral">Karya 02</span>
+              </div>
+              <h3 class="portfolio-title">Tata Letak & Sampul Novel Remaja</h3>
+              <p class="portfolio-desc">
+                Perpaduan warna hangat yang ceria pada sampul serta pengaturan tata letak interior yang bersahabat agar
+                remaja nyaman membaca naskah tebal tanpa lelah.
+              </p>
+              <ul class="spec-list">
+                <li>Format: 14 x 20 cm (Standar Fiksi Populer)</li>
+                <li>Font Teks: Serif Klasik Nyaman Mata</li>
+                <li>Fitur: Header Halaman & Ornamen Bab Lembut</li>
+              </ul>
+              <button class="btn-pill" onclick="openDetailModal('novel')">
+                Lihat Rincian Konsep
+              </button>
+            </div>
+          </article>
+
+          <!-- KARYA 3: Desain Buku Panduan Sederhana -->
+          <article class="portfolio-card">
+            <div class="book-visual-frame">
+              <div class="book-mockup theme-panduan">
+                <div class="book-cover-top">
+                  <span class="book-badge">Buku Panduan</span>
+                  <div class="book-title-mockup">Panduan Menulis Mandiri</div>
+                  <div class="book-subtitle-mockup">Langkah Praktis Dari Ide ke Naskah</div>
+                </div>
+
+                <!-- Ilustrasi Vektor Panduan Sederhana -->
+                <svg class="book-artwork-svg" width="90" height="70" viewBox="0 0 90 70" fill="none">
+                  <rect x="25" y="18" width="40" height="34" rx="6" stroke="#0f2d59" stroke-width="2" fill="none" />
+                  <line x1="33" y1="28" x2="57" y2="28" stroke="#0f2d59" stroke-width="1.8" stroke-linecap="round" />
+                  <line x1="33" y1="36" x2="51" y2="36" stroke="#1b437e" stroke-width="1.8" stroke-linecap="round" />
+                  <circle cx="58" cy="44" r="7" fill="#60d673" />
+                  <polyline points="55,44 57,46 61,42" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+                <div class="book-cover-bottom">
+                  <span>EDISI PRAKTIS ROHAYU</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-content">
+              <div class="portfolio-category-pill">
+                <span class="pill-tag accent-green">Karya 03</span>
+              </div>
+              <h3 class="portfolio-title">Desain Buku Panduan Sederhana</h3>
+              <p class="portfolio-desc">
+                Struktur layout berbasis modul informatif, kotak rangkuman, dan daftar centang yang memudahkan pembaca
+                mempraktikkan isi buku bab demi bab.
+              </p>
+              <ul class="spec-list">
+                <li>Format: 14.8 x 21 cm (A5 Standar Ringkas)</li>
+                <li>Elemen: Kotak Tips, Bagan Alur, & Lembar Catatan</li>
+                <li>Dual Output: Siap Cetak & E-book PDF Interaktif</li>
+              </ul>
+              <button class="btn-pill" onclick="openDetailModal('panduan')">
+                Lihat Rincian Konsep
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ALUR KERJA DESAIN (PROSES RAMAH & JELAS)
+         ========================================================================== -->
+    <section class="section-process" id="proses">
+      <div class="container">
+        <div class="process-card-wrap">
+          <div class="section-header-center">
+            <span class="pill-tag" style="margin-bottom: var(--space-12);">Transparan & Mudah</span>
+            <h2>Alur Kolaborasi Desain Naskah</h2>
+            <p>
+              Tahapan sederhana tanpa kerumitan teknis agar Anda bisa fokus menulis sementara saya merapikan wujud fisik
+              buku Anda.
+            </p>
+          </div>
+
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h3>Temu Naskah</h3>
+              <p>Kita berbincang santai mengenai tema buku, sasaran pembaca, dan ukuran buku yang Anda idamkan.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h3>Draf Konsep</h3>
+              <p>Saya menyiapkan pilihan konsep sampul dan contoh tata letak 3 bab pertama untuk Anda rasakan
+                sentuhannya.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h3>Penyempurnaan</h3>
+              <p>Sesi revisi ramah untuk memastikan tidak ada salah ketik judul, margin sudah pas, dan nuansa visual
+                tepat.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <h3>Serah Berkas</h3>
+              <p>Pemberian paket berkas PDF cetak lengkap dengan panduan teknis yang siap dikirim langsung ke
+                percetakan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BAGIAN KONTAK & FORMULIR KONSULTASI
+         ========================================================================== -->
+    <section class="section-contact" id="kontak">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-info-col">
+            <span class="pill-tag" style="margin-bottom: var(--space-12);">Mari Berkolaborasi</span>
+            <h2 class="contact-info-title">Punya Naskah yang Siap Diterbitkan?</h2>
+            <p class="contact-info-text">
+              Jangan biarkan naskah Anda tertahan di dalam laci. Mari kita wujudkan menjadi buku yang layak dipajang dan
+              nyaman dibaca. Konsultasi awal sepenuhnya gratis dan ramah.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-item">
+                <div class="contact-icon">✉</div>
+                <div>
+                  <div class="contact-detail-title">Surat Elektronik (Email)</div>
+                  <div class="contact-detail-val">rohayu.desainbuku@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">💬</div>
+                <div>
+                  <div class="contact-detail-title">WhatsApp & Konsultasi</div>
+                  <div class="contact-detail-val">+62 812-3456-7890</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-detail-title">Lokasi Studio</div>
+                  <div class="contact-detail-val">Yogyakarta & Online Seluruh Indonesia</div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="background: var(--color-pill-bg); border: 1px solid var(--color-border); padding: 16px 20px; border-radius: 20px;">
+              <p style="font-size: 14px; margin-bottom: 0; color: var(--color-pill-text);">
+                💡 <strong>Catatan:</strong> Naskah dalam format Microsoft Word, Google Docs, atau catatan sederhana
+                dapat langsung dikirim untuk ditinjau.
+              </p>
+            </div>
+          </div>
+
+          <!-- Formulir Konsultasi -->
+          <div class="contact-form">
+            <h3 style="font-size: 20px; margin-bottom: var(--space-16);">Kirim Pesan atau Pertanyaan</h3>
+
+            <div id="formSuccessAlert" class="form-alert">
+              Terima kasih! Pesan Anda telah diterima. Rohayu akan membalas dalam waktu 1x24 jam kerja.
+            </div>
+
+            <form id="konsultasiForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="namaLengkap" class="form-label">Nama Lengkap Anda</label>
+                <input type="text" id="namaLengkap" class="form-control" placeholder="Contoh: Budi Santoso" required />
+              </div>
+
+              <div class="form-group">
+                <label for="emailPengirim" class="form-label">Alamat Email Aktif</label>
+                <input type="email" id="emailPengirim" class="form-control" placeholder="nama@email.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="jenisNaskah" class="form-label">Jenis Layanan / Naskah Buku</label>
+                <select id="jenisNaskah" class="form-control" required>
+                  <option value="" disabled selected>Pilih jenis naskah buku Anda...</option>
+                  <option value="puisi">Sampul Buku Antologi Puisi</option>
+                  <option value="novel">Tata Letak & Sampul Novel Remaja</option>
+                  <option value="panduan">Buku Panduan / Modul Sederhana</option>
+                  <option value="lainnya">Lainnya (Buku Anak, Biografi, dll.)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="pesanNaskah" class="form-label">Ceritakan Sedikit Tentang Buku Anda</label>
+                <textarea id="pesanNaskah" class="form-control"
+                  placeholder="Tuliskan tema buku, perkiraan jumlah halaman, atau preferensi gaya desain yang Anda inginkan..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn-pill btn-pill-primary" style="width: 100%;">
+                Kirimkan Rencana Buku Saya
+              </button>
+
+              <p class="form-note">
+                Privasi naskah dan ide Anda 100% aman dan tidak akan disebarluaskan.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL DETAIL INTERAKTIF
+       ========================================================================== -->
+  <div class="modal-backdrop" id="detailModal" onclick="handleBackdropClick(event)">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" onclick="closeDetailModal()" aria-label="Tutup Jendela Detail">✕</button>
+      <div id="modalDynamicContent">
+        <!-- Konten diisi lewat JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        Rohayu<span class="brand-dot"></span>
+      </div>
+      <p class="footer-tagline">
+        Spesialis Desain Sampul dan Tata Letak Buku Sederhana di Indonesia. Menjadikan setiap lembar naskah bermakna
+        bagi penulis dan pembacanya.
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#portofolio">Karya Desain</a></li>
+        <li><a href="#proses">Alur Kerja</a></li>
+        <li><a href="#kontak">Hubungi Kami</a></li>
+      </ul>
+
+      <p class="footer-copy">
+        &copy; 2026 Rohayu — Desain Buku Sederhana. Hak Cipta Dilindungi Undang-Undang. Dirancang dengan Gemini Inspired
+        Design System.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Logika JavaScript Eksternal (Dipecah) -->
+  <script src="script.js" defer></script>
+</body>
+</html>
